@@ -64,7 +64,7 @@ Article.fetchAll = function() {
     // and then render the index page.
     $.get('data/hackerIpsum.json', parseArticle);
 
-    function parseArticle(response){
+    var parseArticle = function(response){
       localStorage.setItem('rawData', JSON.stringify(response));
       Article.loadAll(response);
       articleView.initIndexPage();
